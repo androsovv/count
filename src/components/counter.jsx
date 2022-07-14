@@ -3,7 +3,7 @@ import  "bootstrap/dist/css/bootstrap.css";
 
 const Counter = (props) => {
 
-    const [value, setValue] = useState(props.value);
+    const {value, onInc, id, onDec} = props;
 
 
     const formatValue = () => {
@@ -14,11 +14,11 @@ const Counter = (props) => {
     classes += value === 0 ? "bg-warning" : "bg-primary";
 
     const handleIncrement = () => {
-        setValue((count) => count + 1);
+       onInc(id);
     };
 
     const handleDecrement = () => {
-        setValue((count) => count - 1);
+        onDec(id);
     };
 
 
